@@ -3,10 +3,23 @@ export class ResistorSet {
   resistances: number[];
   constructor(tolerance: string, resistances: number[]) {
     this.tolerance = tolerance;
-    this.resistances = resistances;
+    this.resistances = this.populate_resistor_values(resistances);
+  }
+
+  populate_resistor_values(values: number[]): number[] {
+    var final_array: number[] = [];
+    let multipliers = [1, 10, 100, 1000, 10000];
+  
+    multipliers.forEach(multiplier => {
+      values.forEach(value => {
+        final_array.push(value * multiplier);
+      })
+    })
+    return final_array;
   }
 }
 
+// TODO: pull this data from online distributor API because more resistances are actually supported.
 export default [
   new ResistorSet("E12", [10,12,15,18,22,27,33,39,47,56,68,82]),
   new ResistorSet("E24", [10,11,12,13,15,16,18,20,22,24,27,30,33,36,39,43,47,51,56,62,68,75,82,91]),

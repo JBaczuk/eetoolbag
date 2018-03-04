@@ -6,14 +6,19 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "prepublish": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "test": "mocha -r ts-node/register 'tests/**/*.ts'",
+    "build": "cd src/ && tsc",
     "run": "npm run build && node dist/index.js"
   },
   "keywords": [],
   "author": "Jordan Baczuk",
   "license": "MIT",
   "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/mocha": "^2.2.48",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.1",
+    "ts-node": "^5.0.1",
     "typescript": "^2.7.2"
   }
 }
