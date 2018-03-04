@@ -7,3 +7,6 @@ E12 - 10%, E24 - 5%, E96 - 1%, E192 - 0.1%
 
 ## Publishing
 `npm publish`
+
+## TODO
+- Create as a CLI application: [https://seenukarthi.com/typescript/2017/11/22/typescript-cmdline-tool/]()
