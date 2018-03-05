@@ -2,14 +2,14 @@
 
 ## Installation
 ```
-npm install <name_here>
+npm install eetoolbag
 ```
 
 ## Usage
 ### Find Voltage Divider
-Finds the best voltage divider using standard resistances and the specified tolerance and max output impedance.  
+Finds the best voltage divider using standard resistances and the specified tolerance and max output impedance. 
 ```
-circuit getvdiv <input_voltage> <output_voltage> <tolerance_code> <max_output_impedance>
+ee gv
 ```
 
 ## Test

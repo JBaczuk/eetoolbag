@@ -10,5 +10,6 @@ export default class Analog {
     find_best_vdiv(input_voltage: number, output_voltage: number, tolerance_code: string, maximum_output_impedance: number): {
         r1: number;
         r2: number;
+        output_voltage: number;
     };
 }

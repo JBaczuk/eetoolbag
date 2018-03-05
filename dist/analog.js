@@ -17,6 +17,7 @@ var Analog = /** @class */ (function () {
     Analog.prototype.find_best_vdiv = function (input_voltage, output_voltage, tolerance_code, maximum_output_impedance) {
         var r1 = 0;
         var r2 = 0;
+        var calculated_ov = 0;
         var gain = output_voltage / input_voltage;
         // Calculate R1/R2 ratio
         var r1_r2_ratio = (1 - gain) / gain;
@@ -37,13 +38,14 @@ var Analog = /** @class */ (function () {
                     }
                 });
             }
-            // throw new Error('Invalid tolerance code: ' + tolerance_code + '.  Acceptable codes: E12, E24, E96, E192');
+            calculated_ov = input_voltage * (r2 / (r1 + r2));
         });
         // Only use resistances for R2 that are less than the max output impedance
         // Find resistors closest to (but not greater than) the calculated ratio above
         return {
             r1: r1,
-            r2: r2
+            r2: r2,
+            output_voltage: calculated_ov
         };
     };
     return Analog;
