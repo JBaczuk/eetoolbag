@@ -50,8 +50,8 @@ program
     inquirer_1.prompt(getvdiv_questions).then(function (answers) {
         var analog = new analog_1.default();
         var result = analog.find_best_vdiv(answers.input_voltage, answers.output_voltage, answers.tolerance_code, answers.max_output_impedance);
-        console.log('r1: ' + result.r1);
-        console.log('r2: ' + result.r2);
+        console.log('r1 (connected to input voltage): ' + result.r1);
+        console.log('r2 (connected to ground): ' + result.r2);
         console.log('output voltage: ' + result.output_voltage);
     });
 });

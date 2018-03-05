@@ -21,4 +21,8 @@ npm publish
 ```
 
 ## Development
+```
+npm run build-cli
+npm install -g
+```
 - Add ASCII art [https://www.npmjs.com/package/ascii-art]()

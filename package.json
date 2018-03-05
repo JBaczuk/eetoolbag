@@ -1,6 +1,6 @@
 {
-  "name": "circuit_toolbag",
-  "version": "1.0.0",
+  "name": "eetoolkit",
+  "version": "0.1.0",
   "description": "## Resistors - standard_resistors.json Contains standard base resistor values for the most commonly used tolerances: E12 - 10%, E24 - 5%, E96 - 1%, E192 - 0.1%   - To determine values other than the base, multiply the base value by 1, 10, 100, 1k, or 10k.",
   "main": "dist/index.js",
   "bin": {
@@ -29,6 +29,7 @@
   "dependencies": {
     "@types/inquirer": "0.0.36",
     "commander": "^2.14.1",
-    "inquirer": "^5.1.0"
+    "inquirer": "^5.1.0",
+    "npm": "^5.7.1"
   }
 }
