@@ -28,6 +28,7 @@ npm install -g
 - Add ASCII art [https://www.npmjs.com/package/ascii-art]()
 
 ## Bugs
+Bugs are managed using Github Issues.  Use the following format to submit bugs:  
 #### Issue description
 
 #### Steps to reproduce the issue
