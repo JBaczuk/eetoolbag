@@ -45,4 +45,7 @@ Bugs are managed using Github Issues.  Use the following format to submit bugs:
 
 #### Additional details / screenshot
 - ![Screenshot]()
--
+
+## Future Features
+- Non-inverting Op Amp gain resistors
+- LED current limiting resistor

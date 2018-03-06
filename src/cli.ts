@@ -24,7 +24,7 @@ program
 //     console.log('r2: ' + result.r2);
 //   });
 
-const getvdiv_questions = [
+const get_vdiv_questions = [
   {
     type : 'input',
     name : 'input_voltage',
@@ -38,7 +38,7 @@ const getvdiv_questions = [
   {
     type : 'input',
     name : 'tolerance_code',
-    message : 'Enter tolerance code (Acceptable codes: E12, E24, E96, E192) ...'
+    message : 'Enter tolerance code. Acceptable codes: E12 (10%), E24 (5%), E96 (1%), E192 (0.5%) ...'
   },
   {
     type : 'input',
@@ -47,12 +47,35 @@ const getvdiv_questions = [
   }
 ];
 
+const led_res_questions = [
+  {
+    type: 'input',
+    name: 'input_voltage',
+    message: 'Enter input voltage ...'
+  },
+  {
+    type: 'input',
+    name: 'forward_voltage',
+    message: 'Enter led forward voltage ...'
+  },
+  {
+    type: 'input',
+    name: 'current',
+    message: 'Enter desired continuous current ...'
+  },
+  {
+    type : 'input',
+    name : 'tolerance_code',
+    message : 'Enter tolerance code. Acceptable codes: E12 (10%), E24 (5%), E96 (1%), E192 (0.5%) ...'
+  }
+]
+
 program
   .command('getvdiv')
   .alias('gv')
   .description('Find best voltage divider')
   .action(() => {
-    prompt(getvdiv_questions).then(answers => {
+    prompt(get_vdiv_questions).then(answers => {
       let analog = new Analog();
       let result = analog.find_best_vdiv(answers.input_voltage, answers.output_voltage, answers.tolerance_code, answers.max_output_impedance);
       console.log('r1 (connected to input voltage): ' + result.r1);
@@ -60,5 +83,17 @@ program
       console.log('output voltage: ' + result.output_voltage);
     })
   });
+
+program
+  .command('ledres')
+  .alias('lr')
+  .description('Calculate current-limiting resistor for LED')
+  .action(() => {
+    prompt(led_res_questions).then(answers => {
+      let analog = new Analog();
+      let resistor = analog.calc_led_res(answers.input_voltage, answers.forward_voltage, answers.current, answers.tolerance_code);
+      console.log('Resistor: ' + resistor);
+    })
+  })
 
 program.parse(process.argv);

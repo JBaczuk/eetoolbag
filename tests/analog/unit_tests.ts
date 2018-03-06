@@ -44,3 +44,11 @@ describe('find_best_vdiv', () => {
     expect(result.r2).to.equal(49900);
   });
 });
+
+describe('calc_led_res', () => {
+  it('should return 30', () => {
+    let analog = new Analog();
+    let resistor = analog.calc_led_res(2.5, 2.2, .01, 'E24');
+    expect(resistor).to.equal(30);
+  });
+});
