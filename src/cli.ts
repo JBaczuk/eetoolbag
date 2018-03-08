@@ -78,9 +78,9 @@ program
     prompt(get_vdiv_questions).then(answers => {
       let analog = new Analog();
       let result = analog.find_best_vdiv(answers.input_voltage, answers.output_voltage, answers.tolerance_code, answers.max_output_impedance);
-      console.log('r1 (connected to input voltage): ' + result.r1);
-      console.log('r2 (connected to ground): ' + result.r2);
-      console.log('output voltage: ' + result.output_voltage);
+      console.log('r1 (connected to input voltage) (Ohm): ' + result.r1);
+      console.log('r2 (connected to ground) (Ohm): ' + result.r2);
+      console.log('output voltage (V): ' + result.output_voltage);
     })
   });
 
@@ -91,8 +91,10 @@ program
   .action(() => {
     prompt(led_res_questions).then(answers => {
       let analog = new Analog();
-      let resistor = analog.calc_led_res(answers.input_voltage, answers.forward_voltage, answers.current, answers.tolerance_code);
-      console.log('Resistor: ' + resistor);
+      let result = analog.calc_led_res(answers.input_voltage, answers.forward_voltage, answers.current, answers.tolerance_code);
+      let current = 
+      console.log('Resistor (Ohm): ' + result.resistor);
+      console.log('Current (A): ' + result.current);
     })
   })
 

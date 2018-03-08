@@ -71,6 +71,10 @@ export default class Analog {
         }
       }
     });
-    return resistor;
+    let final_current = v_r_max / resistor;
+    return {
+      resistor: resistor,
+      current: final_current
+    };
   }
 }
