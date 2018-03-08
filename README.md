@@ -1,6 +1,9 @@
-# Circuit Toolbag
+# Electrical Engineering Toolbag
+The EE toolbag provides calculators for common electrical engineering problems for electronics design.
 
 ## Installation
+1. Install [NPM](https://www.npmjs.com/get-npm)
+2. Install EE Toolbag using npm:
 ```
 npm install eetoolbag
 ```
@@ -45,4 +48,7 @@ Bugs are managed using Github Issues.  Use the following format to submit bugs:
 
 #### Additional details / screenshot
 - ![Screenshot]()
--
+
+## Future Features
+- Non-inverting Op Amp gain resistors
+- LED current limiting resistor
