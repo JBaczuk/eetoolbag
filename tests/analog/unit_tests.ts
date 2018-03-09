@@ -73,3 +73,30 @@ describe('calc_led_res', () => {
     expect(result.current).to.be.closeTo(.01978, .00001);
   });
 });
+
+describe('calc_nia_res', () => {
+  
+  var analog: Analog;
+
+  before(() => {
+    analog = new Analog();
+  });
+
+  it('should return 470 ohm', () => {
+    let result = analog.calc_nia_res(22.3, 'E12');
+    expect(result.r1).to.equal(470);
+    expect(result.gain).to.be.closeTo(22.3, .1);
+  });
+
+  it('should return 91 ohm', () => {
+    let result = analog.calc_nia_res(34, 'E192');
+    expect(result.r1).to.equal(305);
+    expect(result.gain).to.be.closeTo(34, 1);
+  });
+
+  it('should return 109 ohm', () => {
+    let result = analog.calc_nia_res(91, 'E192');
+    expect(result.r1).to.equal(113);
+    expect(result.gain).to.be.closeTo(91, 2);
+  });
+});
