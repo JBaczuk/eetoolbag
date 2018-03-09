@@ -12,23 +12,28 @@ npm install eetoolbag
 ### Find Voltage Divider
 Finds the best voltage divider using standard resistances and the specified tolerance and max output impedance. 
 ```
-ee gv
+ee getvdiv
 ```
 
-## Test
-`npm run test`
-
-## Publishing
+### Calculate led current-limiting resistor
+Calculates the size of a current-limiting resistor for a specified LED current and voltage
 ```
-npm publish
+ee ledres
+```
+
+### Non-inverting Amplifier
+Calculates the op amp resistors for a non-inverting amplifier with a specified gain
+```
+ee ampres
 ```
 
 ## Development
 ```
-npm run build-cli
+git clone https://github.com/JBaczuk/eetoolbag.git
+npm run test
+npm run build-all
 npm install -g
 ```
-- Add ASCII art [https://www.npmjs.com/package/ascii-art]()
 
 ## Bugs
 Bugs are managed using Github Issues.  Use the following format to submit bugs:  
@@ -49,6 +54,5 @@ Bugs are managed using Github Issues.  Use the following format to submit bugs:
 #### Additional details / screenshot
 - ![Screenshot]()
 
-## Future Features
-- Non-inverting Op Amp gain resistors
-- LED current limiting resistor
+## Future Requests
+Please submit feature requests as issues, or create your own and submit a pull request!

@@ -12,6 +12,7 @@
     "test": "npm run build && mocha -r ts-node/register 'tests/**/*.ts'",
     "build": "tsc",
     "build-cli": "tsc --outDir bin",
+    "build-all": "npm run prepublish",
     "run": "npm run build && node dist/index.js"
   },
   "keywords": [],

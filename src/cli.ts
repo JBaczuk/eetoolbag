@@ -111,8 +111,8 @@ program
   })
 
 program
-  .command('non_inv_amp')
-  .alias('nia')
+  .command('ampres')
+  .alias('ar')
   .description('Calculate op amp resistors for non-inverting amplifier')
   .action(() => {
     prompt(nia_res_questions).then(answers => {
