@@ -9,6 +9,11 @@ npm install eetoolbag
 ```
 
 ## Usage
+List all available commands
+```
+ee -h
+```
+
 ### Find Voltage Divider
 Finds the best voltage divider using standard resistances and the specified tolerance and max output impedance. 
 ```

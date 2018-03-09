@@ -4,9 +4,10 @@ import * as standard_resistors from './data/standard_resistors';
 import * as program from 'commander';
 import Analog from './analog';
 import { prompt } from 'inquirer';
+var pjson = require('../package.json');
 
 program
-  .version('0.0.1')
+  .version(pjson.version)
   .description(
     'Electrical Engineering Toolkit\n\
     Some Ascii\
