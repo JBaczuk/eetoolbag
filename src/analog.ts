@@ -62,7 +62,6 @@ export default class Analog {
 
     standard_resistors.default.forEach(set => {
       if (set.tolerance == tolerance_code) {
-        // Maximize R2 impedance
         for(var resistance of set.resistances) {
           if (resistance >= ideal_r) {
             resistor = resistance;
@@ -77,4 +76,35 @@ export default class Analog {
       current: final_current
     };
   }
+
+  calc_nia_res(gain: number, tolerance_code: string) {
+    var rf = 10000;
+    var r1 = 0;
+    var final_gain = 0;
+    let max_r = 10000;
+    // TODO: this needs refining for speed and Vsrc range
+    // 50k for max resistor value to keep performance adequate
+    // start at 10k max.
+    standard_resistors.default.forEach(set => {
+      if (set.tolerance == tolerance_code) {
+        for(var resistance of set.resistances) {
+          // TODO: iterate over them for rf < max_r also
+          if (resistance <= max_r) {
+            var current_gain = 1 + rf/resistance;
+            if (Math.abs(gain - current_gain) < Math.abs(gain - final_gain) && current_gain <= gain) {
+              r1 = resistance;
+              final_gain = current_gain;
+            }
+          }
+        }
+      }
+    });
+
+    return {
+      r1: r1,
+      rf: rf,
+      gain: final_gain
+    };
+  }
+
 }

@@ -8,7 +8,7 @@
   },
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && npm run build-cli",
     "test": "npm run build && mocha -r ts-node/register 'tests/**/*.ts'",
     "build": "tsc",
     "build-cli": "tsc --outDir bin",
