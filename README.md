@@ -1,4 +1,5 @@
 # Electrical Engineering Toolbag
+[![NPM](https://img.shields.io/npm/v/eetoolbag.svg)](https://www.npmjs.org/package/eetoolbag)
 The EE toolbag provides calculators for common electrical engineering problems for electronics design.
 
 ## Installation
