@@ -1,14 +1,14 @@
 {
   "name": "eetoolbag",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "## Resistors - standard_resistors.json Contains standard base resistor values for the most commonly used tolerances: E12 - 10%, E24 - 5%, E96 - 1%, E192 - 0.1%   - To determine values other than the base, multiply the base value by 1, 10, 100, 1k, or 10k.",
   "main": "dist/index.js",
   "bin": {
     "ee": "./bin/cli.js"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/JBaczuk/eetoolbag"
+    "type": "git",
+    "url": "https://github.com/JBaczuk/eetoolbag"
   },
   "types": "dist/index.d.ts",
   "scripts": {
